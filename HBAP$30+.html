@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+ 
+    <title> Group_Gross_Recievables</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    
+<style>
+
+ 
+.pad{
+    background-color: lightgrey;
+    width : 1365px;
+    height : 730px;
+    border: 20px solid rgb(231,43,5);
+    padding: 39px;
+    margin: 5px;
+}
+.grid-container {
+        position: center;
+        top : 10%;
+        left: 3%;
+        /*display: grid; */
+        grid-template-columns : 30px;
+        grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px;
+        gap: 3px;
+        background-color : hsl(0, 0%, 100%);
+        padding : 1px;
+        width: 1232px;
+        height: 575px;;
+}
+
+  
+
+</style>
+
+<script>
+    
+    $(document).ready(function(){
+        window.onload = $.ajax({
+            url:"HBAP-$30+.csv",
+            dataType:"text",
+            success:function(data)
+            {
+                var employee_data = data.split(/\r?\n|\r/);
+                var table_data = '<table class = "table table-bordered ">';
+                    for (var count = 0; count<employee_data.length; count++)
+                    {
+                        var cell_data = employee_data[count].split(",");
+                        table_data += '<tr>';
+                            for(var cell_count = 0; cell_count<cell_data.length; cell_count++)
+                            {
+                                if(count === 0) 
+                                {
+                                    table_data += '<th>' + cell_data[cell_count]+'</th>';
+
+                                }
+                                else
+                                {
+                                    table_data += '<td>' + cell_data[cell_count]+'</td>';
+                                }
+                            } table_data += '</tr>';
+                    }table_data += '</table>';
+                     $('#Group--GrossRecievables').html(table_data);
+            }
+        });
+
+    });
+
+
+window.transitionToPage = function(href) {
+    document.querySelector('body').style.opacity = 0
+    setTimeout(function() {
+        window.location.href = href
+    }, 500)
+}
+
+document.add.EventListerner('DOMContentLoaded', function(event) {
+    document.querySelector('body').style.opactiy = 1
+})
+
+    
+</script>
+
+</head>
+<body>
+    <h3 align = "center"> HBAP $30+ Rate (% of Gross-Recievables) </h3>
+<div class = "pad"> 
+    <div><span onclick = "transitionToPage('index.html')"><h7>Go_Back</h7></span></div>
+    <div class = "grid-container"> 
+
+
+         <div class = "container">
+              <div class  = "table-responsive"> 
+                <br />
+            </div>
+                <br />
+            <div id = "Group--GrossRecievables">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

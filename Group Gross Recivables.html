@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+<style>
+.pad{
+    background-color: lightgrey;
+    width :1325px;
+    height : 730px;
+    border: 20px solid rgb(218,43,7);;
+    padding: 39px;
+    margin: 5px;
+}
+.grid-container {
+        position: absolute;
+        top : 10%;
+        left: 5%;
+        /*display: grid;*/
+        grid-template-columns :30px ;
+        grid-template-rows: 40px 15px ;
+        gap: 3px;
+        background-color :#ffffff;
+        padding : 1px;
+        width: 1330px;
+        height: 575px;;
+}
+.grid-container > div {
+    background-color: rgba(255,255,255,0.8);
+    border: 1.5px solid black;
+    /*text-align: center;;*/
+    /*font-size: 16px;*/
+}
+
+body{
+    opacity:0;
+    transition: opactiy .5s;
+}
+
+.heading1{
+    text-indent: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.heading2{
+    text-indent: 40px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.heading3{
+    text-indent: 100px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+</style>
+<script>
+    window.transitionToPage = function(href){
+        document.querySelector('body').style.opacity = 0
+
+        setTimeout(function(){
+            window.location.href = href
+        },500)
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        document.querySelector('body').style.opacity = 1
+    })
+      
+    
+</script>
+
+</head>
+<body>
+<div class = "pad" >
+<p> <h2 align = "center"> MIDAS AIR</h2></p>
+<div class = "grid-container">
+    <div><p style="font-weight: bolder;font-size: 25px;" align="center">Triggers</p></div>
+
+    <div class = "heading1" >Total Cards Gross Receivables Increased by 853.0M $ (%Change: 3.97%) from last month.</p></div>
+    <div class = "heading2" >HBAP Cards Gross Receivables Increased by 949.0M $ (%Change: 3.97%) from last month.</p></div>
+    <div class = "heading3">India Cards Gross Receivables Increased by 853.0M $ (%Change: 3.97%) from last month.</p></div>
+    <div class = "heading3">Sri Lanka Cards Gross Receivables Increased by 853.0M $ (%Change: 3.97%) from last month.</p></div>
+
+    <div>2</div>
+    <div>.</div>
+
+    <div>1</div>
+   
+    </div>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>

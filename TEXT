@@ -1,0 +1,5 @@
+ if (Country == "Region") {
+                                        table_data += '<td class="highlight">' + cell_data[cell_count] + '</td>';
+                                    } else {
+                                                table_data += '<td>' + cell_data[cell_count] + '</td>';
+                                            }
